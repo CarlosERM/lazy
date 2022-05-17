@@ -1,4 +1,4 @@
 .side-menu {
-  background-color: blue;
+  background-color: var(--primary-c1);
   grid-area: sideMenu;
 }

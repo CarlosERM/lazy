@@ -134,4 +134,10 @@ html {
 }
 
 :root {
+  --primary-c1: #00b295;
+  --primary-c2: #10927d;
+  --title-color: #221d23;
+  --text-color: #534e54;
+  --date-color: #37766c;
+  --red-color: #fe5f55;
 }

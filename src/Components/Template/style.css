@@ -1,0 +1,7 @@
+.grid {
+  display: grid;
+  grid-template-areas: 'sideMenu main';
+  grid-template-columns: 2.2fr 8fr;
+  gap: 1.875rem;
+  background-color: red;
+}

@@ -1,4 +1,5 @@
 {
+  "homepage": "https://CarlosERM.github.io/lazy",
   "name": "lazy",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +15,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,6 +49,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^4.0.0",
     "prettier": "2.6.2"
   }
 }

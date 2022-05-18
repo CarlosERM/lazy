@@ -1,0 +1,23 @@
+.nav {
+  margin-top: 1.875rem;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+  transition: background-color 0.2s linear, color 0.2s linear;
+  border-radius: 0.3125rem;
+  height: 2.5rem;
+}
+
+.nav__link:hover {
+  background-color: #ffffff;
+  color: var(--primary-c1);
+  cursor: pointer;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+.coelho {
+  fill: rgb(233, 217, 217);
+}

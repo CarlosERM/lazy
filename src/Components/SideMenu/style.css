@@ -1,4 +1,8 @@
 .side-menu {
   background-color: var(--primary-c1);
   grid-area: sideMenu;
+  padding: 1rem 1.25rem;
+  color: #ffffff;
+  position: relative;
+  min-height: 100%;
 }

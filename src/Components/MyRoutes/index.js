@@ -5,7 +5,7 @@ const MyRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MyTasks />} />
+        <Route path="lazy" element={<MyTasks />} />
       </Routes>
     </BrowserRouter>
   );

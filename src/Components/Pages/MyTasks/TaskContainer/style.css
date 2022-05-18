@@ -1,0 +1,5 @@
+.task-container {
+  border: 0.125rem solid var(--primary-c1);
+  border-radius: 0.625rem;
+  padding: 1.875rem;
+}

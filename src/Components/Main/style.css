@@ -1,4 +1,5 @@
 .main {
   grid-area: main;
-  background-color: aqua;
+  padding-top: 3.25rem;
+  padding-right: 1.875rem;
 }

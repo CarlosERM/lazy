@@ -83,7 +83,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -125,6 +124,13 @@ table {
 
 html {
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+}
+body,
+#root,
+#root > div {
+  height: 100%;
 }
 
 *,
@@ -140,4 +146,5 @@ html {
   --text-color: #534e54;
   --date-color: #37766c;
   --red-color: #fe5f55;
+  --add-button-color: #279af1;
 }

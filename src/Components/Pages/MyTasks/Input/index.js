@@ -1,14 +1,19 @@
+import { AiOutlineSearch, AiOutlinePlus } from 'react-icons/ai';
 import './style.css';
-import { ReactComponent as Search } from '../../../../Assets/search.svg';
 
 const Input = () => {
   return (
-    <form className="form">
-      <input type="text" className="input" placeholder="Procurar anotação" />
-      <button type="submit" className="add-button">
-        <Search style={{ fill: 'white' }} />
+    <div className="task-container-header">
+      <form className="form">
+        <input type="text" className="input" placeholder="Procurar anotação" />
+        <button type="submit" className="button button--search">
+          <AiOutlineSearch className="search-svg" />
+        </button>
+      </form>
+      <button type="button" className="button button--add">
+        <AiOutlinePlus className="add-svg" />
       </button>
-    </form>
+    </div>
   );
 };
 

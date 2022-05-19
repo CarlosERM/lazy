@@ -3,6 +3,10 @@
   grid-area: sideMenu;
   padding: 1rem 1.25rem;
   color: #ffffff;
-  position: relative;
+  width: 21.05%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
   min-height: 100%;
 }

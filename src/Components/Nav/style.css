@@ -18,6 +18,7 @@
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 
-.coelho {
-  fill: rgb(233, 217, 217);
+.book-svg {
+  width: 1.875rem;
+  height: 1.875rem;
 }

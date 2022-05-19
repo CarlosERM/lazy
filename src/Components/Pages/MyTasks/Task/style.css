@@ -4,8 +4,12 @@
   border-radius: 0.625rem;
   cursor: pointer;
   max-width: 14.4031rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-
+.task:hover {
+  transform: scale(1.03);
+  box-shadow: 0rem 0rem 0.5rem rgba(34, 29, 35, 0.6);
+}
 .task__title {
   color: var(--title-color);
   text-align: center;
@@ -34,15 +38,24 @@
 .task-edit-delete {
   display: flex;
   gap: 0.625rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
+
 .edit-svg {
   fill: var(--primary-c1);
   width: 1.375rem;
   height: 1.375rem;
+  transition: transform 0.2s ease-in-out;
 }
 
 .delete-svg {
   fill: var(--red-color);
   width: 1.375rem;
   height: 1.375rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.edit-svg:hover,
+.delete-svg:hover {
+  transform: scale(1.1);
 }

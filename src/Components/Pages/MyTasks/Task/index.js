@@ -45,5 +45,4 @@ Task.propTypes = {
   description: PropTypes.string.isRequired,
   finalData: PropTypes.string.isRequired,
 };
-
 export default Task;

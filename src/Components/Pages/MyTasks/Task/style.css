@@ -14,8 +14,9 @@
 .task--late {
   box-shadow: 0rem 0rem 0.25rem var(--red-color);
 }
+
 .task--late:hover {
-  box-shadow: 0rem 0rem 0.25rem var(--red-color);
+    box-shadow: 0rem 0rem 0.5rem var(--red-color);
 }
 
 .task__title {

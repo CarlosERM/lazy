@@ -3,49 +3,24 @@ import Task from '../Task';
 import './style.css';
 
 const TaskContainer = () => {
+  const task = {
+    title: 'Fazer Tarefa',
+    description: 'Fazer lista de quimica quantica',
+    finalData: '2022-05-19',
+    _links: {
+      self: { href: 'http://localhost:8080/tarefas/1' },
+      tarefas: { href: 'http://localhost:8080/tarefas' },
+    },
+  };
+
   return (
     <div className="task-container">
       <Input />
       <ul className="task-grid">
         <Task
-          title="Lorem Ipsum"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac ultrices risus, vel fringilla massa. Nunc eget laoreet orci. Cras ut velit at urna vulputate efficitur nec vel enim. Nulla nec risus id risus pretium sollicitudin. Morbi in vestibulum lacus, ac egestas neque."
-          date="11/05/2022"
-        />
-        <Task
-          title="Lorem Ipsum"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac ultrices risus, vel fringilla massa. Nunc eget laoreet orci. Cras ut velit at urna vulputate efficitur nec vel enim. Nulla nec risus id risus pretium sollicitudin. Morbi in vestibulum lacus, ac egestas neque."
-          date="11/05/2022"
-        />
-        <Task
-          title="Lorem Ipsum"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac ultrices risus, vel fringilla massa. Nunc eget laoreet orci. Cras ut velit at urna vulputate efficitur nec vel enim. Nulla nec risus id risus pretium sollicitudin. Morbi in vestibulum lacus, ac egestas neque."
-          date="11/05/2022"
-        />
-        <Task
-          title="Lorem Ipsum"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac ultrices risus, vel fringilla massa. Nunc eget laoreet orci. Cras ut velit at urna vulputate efficitur nec vel enim. Nulla nec risus id risus pretium sollicitudin. Morbi in vestibulum lacus, ac egestas neque."
-          date="11/05/2022"
-        />
-        <Task
-          title="Lorem Ipsum"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac ultrices risus, vel fringilla massa. Nunc eget laoreet orci. Cras ut velit at urna vulputate efficitur nec vel enim. Nulla nec risus id risus pretium sollicitudin. Morbi in vestibulum lacus, ac egestas neque."
-          date="11/05/2022"
-        />
-        <Task
-          title="Lorem Ipsum"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac ultrices risus, vel fringilla massa. Nunc eget laoreet orci. Cras ut velit at urna vulputate efficitur nec vel enim. Nulla nec risus id risus pretium sollicitudin. Morbi in vestibulum lacus, ac egestas neque."
-          date="11/05/2022"
-        />
-        <Task
-          title="Lorem Ipsum"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac ultrices risus, vel fringilla massa. Nunc eget laoreet orci. Cras ut velit at urna vulputate efficitur nec vel enim. Nulla nec risus id risus pretium sollicitudin. Morbi in vestibulum lacus, ac egestas neque."
-          date="11/05/2022"
-        />
-        <Task
-          title="Lorem Ipsum"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac ultrices risus, vel fringilla massa. Nunc eget laoreet orci. Cras ut velit at urna vulputate efficitur nec vel enim. Nulla nec risus id risus pretium sollicitudin. Morbi in vestibulum lacus, ac egestas neque."
-          date="11/05/2022"
+          title={task.title}
+          description={task.description}
+          finalData={task.finalData}
         />
       </ul>
     </div>

@@ -10,6 +10,14 @@
   transform: scale(1.03);
   box-shadow: 0rem 0rem 0.5rem rgba(34, 29, 35, 0.6);
 }
+
+.task--late {
+  box-shadow: 0rem 0rem 0.25rem var(--red-color);
+}
+.task--late:hover {
+  box-shadow: 0rem 0rem 0.25rem var(--red-color);
+}
+
 .task__title {
   color: var(--title-color);
   text-align: center;
@@ -19,6 +27,11 @@
   font-size: 1rem;
   line-height: 1.3rem;
 }
+
+.task__title--late {
+  border-bottom: 0.125rem solid var(--red-color);
+}
+
 .task__paragraph {
   font-family: 'Merriweather', serif;
   font-size: 0.6875rem;
@@ -33,6 +46,10 @@
 }
 .task_date {
   color: var(--date-color);
+}
+
+.task_date--late {
+  color: var(--red-color);
 }
 
 .task-edit-delete {

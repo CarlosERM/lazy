@@ -11,10 +11,12 @@
   padding: 0.9375rem 5rem 0.9375rem 1.875rem;
   font-size: 1.125rem;
   color: var(--text-color);
+  transition: box-shadow 0.2s ease-in-out;
 }
 
 .input:focus {
   outline: none;
+  box-shadow: 0rem 0rem 0.5rem -0.1rem var(--primary-c2);
 }
 
 .button {
@@ -29,6 +31,11 @@
   border-radius: 0rem 0.625rem 0.625rem 0rem;
   margin-left: -5rem;
   width: 5rem;
+
+}
+.button--search:hover {
+  opacity: 0.9;
+
 }
 .search-svg {
   fill: white;
@@ -40,8 +47,12 @@
   min-width: 3.4375rem;
   min-height: 3.4375rem;
   border-radius: 50%;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-
+.button--add:hover {
+  transform: scale(1.07);
+  box-shadow: 0rem 0rem 0.4rem var(--add-button-color);
+}
 .add-svg {
   height: 1.5rem;
   width: 1.5rem;

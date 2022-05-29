@@ -1,5 +1,6 @@
 .side-menu {
   background-color: var(--primary-c1);
+  border-radius: 0px 5px 5px 0px;
   grid-area: sideMenu;
   padding: 1rem 1.25rem;
   color: #ffffff;

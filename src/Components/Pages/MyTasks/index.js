@@ -5,7 +5,7 @@ import Title from '../../Title';
 const MyTasks = () => {
   return (
     <>
-      <Title title="Minhas Tarefas" />
+      <Title title="Minhas tarefas" />
       <Container>
         <TaskContainer />
       </Container>

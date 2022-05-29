@@ -1,5 +1,5 @@
-import Template from './Components/Template';
 import './GlobalStyle/style.css';
+import Template from './Components/Template';
 
 const App = () => {
   return <Template />;

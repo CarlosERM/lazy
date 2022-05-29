@@ -31,11 +31,9 @@
   border-radius: 0rem 0.625rem 0.625rem 0rem;
   margin-left: -5rem;
   width: 5rem;
-
 }
 .button--search:hover {
   opacity: 0.9;
-
 }
 .search-svg {
   fill: white;

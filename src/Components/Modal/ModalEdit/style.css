@@ -19,6 +19,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 9px;
+  font-size: 16px;
 }
 
 .button-container {
@@ -28,7 +29,7 @@
 }
 
 .input-edit--data {
-  width: 95px;
+  width: 110px;
   margin-bottom: 0%;
 }
 

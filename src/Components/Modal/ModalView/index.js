@@ -4,7 +4,7 @@ import './style.css';
 const ModalView = () => {
   return (
     <div>
-      <h2 className="title-modal">Lorem Ipsun</h2>
+      <h2 className="title-modal">Lorem Ipsun </h2>
       <p className="paragraph-modal">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
         ultrices risus, vel fringilla massa. Nunc eget laoreet orci. Cras ut

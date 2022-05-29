@@ -1,0 +1,13 @@
+.button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #fe5f55;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: white;
+  text-transform: uppercase;
+}

@@ -39,6 +39,7 @@
   line-height: 1.0313rem;
   color: var(--text-color);
   min-height: 11.25rem;
+  word-wrap: break-word;
 }
 
 .task_bottom {

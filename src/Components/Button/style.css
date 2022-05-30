@@ -1,13 +1,18 @@
 .buttonn {
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.625rem;
   border: none;
-  background: #fe5f55;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  color: white;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+  color: #ffffff;
   text-transform: uppercase;
+  transition: transform 0.1s ease-in-out;
+}
+
+.buttonn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }

@@ -1,11 +1,15 @@
 import { useEffect, useState, useRef } from 'react';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { MdOutlineDelete } from 'react-icons/md';
+
 import PropTypes from 'prop-types';
 import './style.css';
 import { Modal, useModal } from '../../../Modal';
+import { useAuth } from '../../../hook/context';
 
-const Task = ({ title, description, finalData }) => {
+const Task = ({ id, title, description, finalData }) => {
+  const { deleteOne } = useAuth();
+
   const [
     itemModalOpen,
     setItemModalOpen,
@@ -32,18 +36,24 @@ const Task = ({ title, description, finalData }) => {
     } else {
       setLate(false);
     }
-    setSelected({ title, description, finalData });
+    setSelected({ id, title, description, date });
   }, []);
 
   function handleViewClick() {
     setType(true);
     toggleModal();
   }
+
   function handleEditClick(event) {
     event.stopPropagation();
     setType(false);
     toggleModal();
   }
+  function handleDeleteClick(event) {
+    event.stopPropagation();
+    deleteOne(id);
+  }
+
   return (
     <>
       <li
@@ -65,7 +75,7 @@ const Task = ({ title, description, finalData }) => {
             <AiOutlineEdit className="edit-svg" onClick={handleEditClick} />
             <MdOutlineDelete
               className="delete-svg"
-              onClick={() => console.log('delete')}
+              onClick={handleDeleteClick}
             />
           </div>
         </div>
@@ -82,8 +92,10 @@ const Task = ({ title, description, finalData }) => {
 };
 
 Task.propTypes = {
+  id: PropTypes.number,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   finalData: PropTypes.string.isRequired,
+  setChange: PropTypes.func,
 };
 export default Task;

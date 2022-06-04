@@ -25,6 +25,7 @@
       2,
       { "namedComponents": "arrow-function" }
     ],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/prop-types": 0
   }
 }

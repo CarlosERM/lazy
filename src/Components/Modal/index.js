@@ -1,43 +1,37 @@
-import PropTypes from 'prop-types';
-
+import { useState } from 'react';
+import ReactDOM from 'react-dom';
 import ModalView from './ModalView';
 import ModalEdit from './ModalEdit';
 import './style.css';
-import { useState } from 'react';
 
-export const useModal = (initialMode = false) => {
-  const [modalOpen, setModalOpen] = useState(initialMode);
-  const toggle = () => setModalOpen(!modalOpen);
-  const [selected, setSelected] = useState();
-  const [type, setType] = useState();
+export const useModal = () => {
+  const [view, setView] = useState(false);
+  const [type, setType] = useState('');
 
-  return [
-    modalOpen,
-    setModalOpen,
-    toggle,
-    selected,
-    setSelected,
-    type,
-    setType,
-  ];
+  function selectType(selectedType) {
+    setType(selectedType);
+  }
+  function toggleModal() {
+    setView(!view);
+  }
+
+  return [view, toggleModal, type, selectType];
 };
 
-export const Modal = ({ handleClose, selected, type }) => {
-  return (
+export const Modal = ({ toggleModal, type }) => {
+  const modal = (
     <>
-      <div className="background-modal" onClick={handleClose}></div>
+      <div className="background-modal" onClick={toggleModal}></div>
       <div className="modal-container">
-        {type ? (
-          <ModalView selected={selected} />
+        {type === 'view' ? (
+          <ModalView />
+        ) : type === 'edit' ? (
+          <ModalEdit />
         ) : (
-          <ModalEdit selected={selected} />
+          <>QUER DELETAR MESMO?</>
         )}
       </div>
     </>
   );
-};
-Modal.propTypes = {
-  handleClose: PropTypes.func.isRequired,
-  selected: PropTypes.object.isRequired,
-  type: PropTypes.bool.isRequired,
+  return ReactDOM.createPortal(modal, document.body);
 };

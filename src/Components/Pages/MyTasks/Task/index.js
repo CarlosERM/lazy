@@ -1,30 +1,17 @@
 import { useEffect, useState, useRef } from 'react';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { MdOutlineDelete } from 'react-icons/md';
-
-import PropTypes from 'prop-types';
-import './style.css';
-import { Modal, useModal } from '../../../Modal';
 import { useAuth } from '../../../hook/context';
 
-const Task = ({ id, title, description, finalData }) => {
-  const { deleteOne } = useAuth();
+import './style.css';
 
-  const [
-    itemModalOpen,
-    setItemModalOpen,
-    toggleModal,
-    selected,
-    setSelected,
-    type,
-    setType,
-  ] = useModal();
+const Task = ({ title, description, finalData }) => {
+  const { toggleModal, selectType } = useAuth();
   const [late, setLate] = useState();
   const taskRef = useRef();
 
   const today = new Date().getTime();
   const dueDate = Date.parse(finalData);
-
   const date = `${finalData.slice(8, 10)}/${finalData.slice(
     5,
     7
@@ -36,24 +23,23 @@ const Task = ({ id, title, description, finalData }) => {
     } else {
       setLate(false);
     }
-    setSelected({ id, title, description, date });
   }, []);
 
   function handleViewClick() {
-    setType(true);
     toggleModal();
+    selectType('view');
   }
 
-  function handleEditClick(event) {
-    event.stopPropagation();
-    setType(false);
+  function handleEditClick(e) {
+    e.stopPropagation();
     toggleModal();
+    selectType('edit');
   }
-  function handleDeleteClick(event) {
-    event.stopPropagation();
-    deleteOne(id);
+  function handleDeleteClick(e) {
+    e.stopPropagation();
+    toggleModal();
+    selectType('delete');
   }
-
   return (
     <>
       <li
@@ -80,22 +66,8 @@ const Task = ({ id, title, description, finalData }) => {
           </div>
         </div>
       </li>
-      {itemModalOpen && (
-        <Modal
-          handleClose={() => setItemModalOpen(false)}
-          selected={selected}
-          type={type}
-        />
-      )}
     </>
   );
 };
 
-Task.propTypes = {
-  id: PropTypes.number,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  finalData: PropTypes.string.isRequired,
-  setChange: PropTypes.func,
-};
 export default Task;

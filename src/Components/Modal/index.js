@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import ModalView from './ModalView';
 import ModalEdit from './ModalEdit';
-import './style.css';
+import { useState } from 'react';
 import { ModalDelete } from './ModalDelete';
+import './style.css';
 
 export const useModal = () => {
   const [view, setView] = useState(false);

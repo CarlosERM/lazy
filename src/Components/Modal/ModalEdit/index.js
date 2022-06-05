@@ -35,7 +35,6 @@ const ModalEdit = ({ type }) => {
     } else {
       createPostit(send);
     }
-
     toggleModal();
   }
 

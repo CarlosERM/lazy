@@ -6,7 +6,6 @@ export const ModalDelete = () => {
   const { toggleModal, deletePostit, selected } = useAuth();
 
   function handleDeleteClick() {
-    console.log(selected.id);
     deletePostit(selected.id);
     toggleModal();
   }

@@ -19,7 +19,7 @@ const Task = ({ id, title, description, finalDate }) => {
     } else {
       setLate(false);
     }
-  }, []);
+  }, [selectValues]);
 
   function handleViewClick() {
     toggleModal();

@@ -1,0 +1,19 @@
+.loader {
+  border: 8px solid #dceff5;
+  border-top: 8px solid var(--primary-c1); /* Blue */
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  animation: spin 2s linear infinite;
+  grid-column: 1 / -1;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

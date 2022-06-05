@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
     useModal();
   const [tasks, setTasks] = useState([]);
   const [change, setChange] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     getAll();
@@ -18,10 +19,14 @@ export const AuthProvider = ({ children }) => {
   async function getAll() {
     const response = await fetch('http://localhost:3001/api/v1/postits');
     const file = await response.json();
-    if (file.success) setTasks(file.data);
+    const ordenado = file.data.sort((a, b) => {
+      return new Date(a.finalDate) - new Date(b.finalDate);
+    });
+    if (file.success) setTasks(ordenado);
   }
 
   async function getPostit(title) {
+    setLoader(true);
     const response = await fetch(
       `http://localhost:3001/api/v1/postits/${title}`,
       {
@@ -34,9 +39,11 @@ export const AuthProvider = ({ children }) => {
     } else {
       setTasks([]);
     }
+    setLoader(false);
   }
 
   async function deletePostit(id) {
+    setLoader(true);
     const response = await fetch(`http://localhost:3001/api/v1/postits/${id}`, {
       method: 'DELETE',
     });
@@ -48,9 +55,11 @@ export const AuthProvider = ({ children }) => {
       toast.error(file.message);
       setChange(!change);
     }
+    setLoader(false);
   }
 
   async function updatePostit(id, body) {
+    setLoader(true);
     const response = await fetch(`http://localhost:3001/api/v1/postits/${id}`, {
       body: JSON.stringify(body),
       method: 'PATCH',
@@ -63,9 +72,11 @@ export const AuthProvider = ({ children }) => {
       toast.success(file.message);
       setChange(!change);
     } else toast.error(file.message);
+    setLoader(false);
   }
 
   async function createPostit(body) {
+    setLoader(true);
     const response = await fetch(`http://localhost:3001/api/v1/postits`, {
       body: JSON.stringify(body),
       method: 'POST',
@@ -78,6 +89,7 @@ export const AuthProvider = ({ children }) => {
       toast.success(file.message);
       setChange(!change);
     } else toast.error(file.message);
+    setLoader(false);
   }
 
   return (
@@ -95,6 +107,7 @@ export const AuthProvider = ({ children }) => {
         updatePostit,
         createPostit,
         getAll,
+        loader,
       }}
     >
       {children}

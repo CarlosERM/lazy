@@ -3,7 +3,6 @@ import { AiOutlineEdit } from 'react-icons/ai';
 import { MdOutlineDelete } from 'react-icons/md';
 import { convertDate } from '../../../../utils/convertDate';
 import { useAuth } from '../../../hook/context';
-
 import './style.css';
 
 const Task = ({ id, title, description, finalDate }) => {
@@ -15,7 +14,7 @@ const Task = ({ id, title, description, finalDate }) => {
   const date = convertDate(finalDate);
 
   useEffect(() => {
-    if (today >= dueDate) {
+    if (today > dueDate) {
       setLate(true);
     } else {
       setLate(false);
@@ -29,9 +28,10 @@ const Task = ({ id, title, description, finalDate }) => {
       id: id,
       title: title,
       description: description,
-      finalDate: finalDate,
+      finalDate: date,
     });
   }
+
   function handleEditClick(e) {
     e.stopPropagation();
     toggleModal();
@@ -40,11 +40,17 @@ const Task = ({ id, title, description, finalDate }) => {
       id: id,
       title: title,
       description: description,
-      finalDate: finalDate,
+      finalDate: date,
     });
   }
   function handleDeleteClick(e) {
     e.stopPropagation();
+    selectValues({
+      id: id,
+      title: title,
+      description: description,
+      finalDate: date,
+    });
     toggleModal();
     selectType('delete');
   }

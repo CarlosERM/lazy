@@ -4,7 +4,9 @@
   grid-area: sideMenu;
   padding: 1rem 1.25rem;
   color: #ffffff;
+  min-width: 15.625rem;
   width: 21.05%;
+  max-width: 20rem;
   position: fixed;
   top: 0;
   left: 0;

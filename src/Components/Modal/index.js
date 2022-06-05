@@ -3,17 +3,21 @@ import ReactDOM from 'react-dom';
 import ModalView from './ModalView';
 import ModalEdit from './ModalEdit';
 import './style.css';
+import { ModalDelete } from './ModalDelete';
 
 export const useModal = () => {
   const [view, setView] = useState(false);
   const [type, setType] = useState('');
   const [selected, setSelected] = useState();
+
   function selectType(selectedType) {
     setType(selectedType);
   }
+
   function selectValues(selectedValue) {
     setSelected(selectedValue);
   }
+
   function toggleModal() {
     setView(!view);
   }
@@ -29,9 +33,11 @@ export const Modal = ({ toggleModal, type }) => {
         {type === 'view' ? (
           <ModalView />
         ) : type === 'edit' ? (
-          <ModalEdit />
+          <ModalEdit type="edit" />
+        ) : type === 'create' ? (
+          <ModalEdit type="create" />
         ) : (
-          <>QUER DELETAR MESMO?</>
+          <ModalDelete />
         )}
       </div>
     </>

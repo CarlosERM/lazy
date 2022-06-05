@@ -1,11 +1,10 @@
-// import { convertDate } from '../../../utils/convertDate';
 import Button from '../../Button';
 import { useAuth } from '../../hook/context';
 import './style.css';
 
-const ModalEdit = () => {
-  const { selected, selectValues, updatePostit } = useAuth();
-  //   const date = convertDate(selected.finalDate);
+const ModalEdit = ({ type }) => {
+  const { selected, selectValues, updatePostit, toggleModal, createPostit } =
+    useAuth();
 
   const handleTitle = (event) => {
     selectValues({ ...selected, title: event.target.value });
@@ -21,12 +20,23 @@ const ModalEdit = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    const date = `${selected.finalDate.slice(6, 10)}-${selected.finalDate.slice(
+      3,
+      5
+    )}-${selected.finalDate.slice(0, 2)}`;
     const send = {
       title: selected.title,
       description: selected.description,
-      finalDate: selected.finalDate,
+      finalDate: date,
     };
-    updatePostit(selected.id, send);
+
+    if (type === 'edit') {
+      updatePostit(selected.id, send);
+    } else {
+      createPostit(send);
+    }
+
+    toggleModal();
   }
 
   return (

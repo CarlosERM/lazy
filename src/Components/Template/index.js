@@ -4,10 +4,12 @@ import Main from '../Main/index';
 
 const Template = () => {
   return (
-    <div className="grid">
-      <SideMenu />
-      <Main />
-    </div>
+    <>
+      <div className="grid">
+        <SideMenu />
+        <Main />
+      </div>
+    </>
   );
 };
 

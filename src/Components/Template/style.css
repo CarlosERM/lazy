@@ -3,4 +3,5 @@
   grid-template-areas: 'sideMenu main';
   grid-template-columns: 2.2fr 8fr;
   gap: 1.875rem;
+  max-width: 1440px;
 }

@@ -1,21 +1,18 @@
 import { useEffect, useState, useRef } from 'react';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { MdOutlineDelete } from 'react-icons/md';
+import { convertDate } from '../../../../utils/convertDate';
 import { useAuth } from '../../../hook/context';
 
 import './style.css';
 
-const Task = ({ title, description, finalData }) => {
-  const { toggleModal, selectType } = useAuth();
+const Task = ({ id, title, description, finalDate }) => {
+  const { toggleModal, selectType, selectValues } = useAuth();
   const [late, setLate] = useState();
   const taskRef = useRef();
-
   const today = new Date().getTime();
-  const dueDate = Date.parse(finalData);
-  const date = `${finalData.slice(8, 10)}/${finalData.slice(
-    5,
-    7
-  )}/${finalData.slice(0, 4)}`;
+  const dueDate = Date.parse(finalDate);
+  const date = convertDate(finalDate);
 
   useEffect(() => {
     if (today >= dueDate) {
@@ -28,12 +25,23 @@ const Task = ({ title, description, finalData }) => {
   function handleViewClick() {
     toggleModal();
     selectType('view');
+    selectValues({
+      id: id,
+      title: title,
+      description: description,
+      finalDate: finalDate,
+    });
   }
-
   function handleEditClick(e) {
     e.stopPropagation();
     toggleModal();
     selectType('edit');
+    selectValues({
+      id: id,
+      title: title,
+      description: description,
+      finalDate: finalDate,
+    });
   }
   function handleDeleteClick(e) {
     e.stopPropagation();

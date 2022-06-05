@@ -3,8 +3,16 @@ import { useAuth } from '../../../hook/context';
 import './style.css';
 
 const Input = () => {
-  const { toggleModal } = useAuth();
-
+  const { toggleModal, selectValues, selectType } = useAuth();
+  function handleAddClick() {
+    selectType('edit');
+    selectValues({
+      title: '',
+      description: '',
+      finalDate: '',
+    });
+    toggleModal();
+  }
   return (
     <div className="task-container-header">
       <form className="form">
@@ -17,7 +25,7 @@ const Input = () => {
       <button
         type="button"
         className="button button--add"
-        onClick={toggleModal}
+        onClick={handleAddClick}
       >
         <AiOutlinePlus className="add-svg" />
       </button>

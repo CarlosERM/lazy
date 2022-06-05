@@ -7,15 +7,18 @@ import './style.css';
 export const useModal = () => {
   const [view, setView] = useState(false);
   const [type, setType] = useState('');
-
+  const [selected, setSelected] = useState();
   function selectType(selectedType) {
     setType(selectedType);
+  }
+  function selectValues(selectedValue) {
+    setSelected(selectedValue);
   }
   function toggleModal() {
     setView(!view);
   }
 
-  return [view, toggleModal, type, selectType];
+  return [view, toggleModal, type, selectType, selected, selectValues];
 };
 
 export const Modal = ({ toggleModal, type }) => {

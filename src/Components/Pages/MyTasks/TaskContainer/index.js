@@ -5,19 +5,18 @@ import './style.css';
 
 const TaskContainer = () => {
   const { tasks } = useAuth();
-
   return (
     <div className="task-container">
       <Input />
       <ul className="task-grid">
         {tasks &&
-          tasks.map(({ id, title, description, finalData }) => {
+          tasks.map(({ id, title, description, finalDate }) => {
             return (
               <Task
                 id={id}
                 title={title}
                 description={description}
-                finalData={finalData}
+                finalDate={finalDate}
                 key={title}
               />
             );
